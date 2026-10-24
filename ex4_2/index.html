@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TV Energy Guide | Exercise 4.2</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://d3js.org/d3.v7.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home"><span class="brand-mark">⚡</span> WattWise <span class="brand-small">/ D3 LAB</span></a>
+    <span class="header-tag">COS30045 · Exercise 4.2</span>
+  </header>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">ENERGY SMARTER, NOT HARDER</span>
+        <h1>Small decisions.<br><span>Lower energy use.</span></h1>
+        <p class="hero-description">Choosing an energy-efficient television can make a difference to your electricity consumption. Explore how D3.js can update a webpage and draw SVG shapes.</p>
+        <a class="hero-link" href="#visualisation">See the D3 example <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-graphic" aria-hidden="true">
+        <div class="glow"></div>
+        <div class="tv"><div class="tv-screen"><div class="hill hill-back"></div><div class="hill hill-front"></div><div class="screen-sun"></div></div></div>
+        <div class="tv-stand"></div>
+        <div class="energy-tag"><span class="energy-dot"></span> ENERGY AWARE</div>
+      </div>
+    </section>
+    <section class="insights" aria-label="Energy tips">
+      <article class="insight-card"><span class="card-number">01 / SCREEN SIZE</span><h2>Size matters</h2><p>Larger televisions often require more electricity, although technology and efficiency also matter.</p></article>
+      <article class="insight-card"><span class="card-number">02 / ENERGY LABEL</span><h2>Check the rating</h2><p>Compare the energy label and estimated annual energy use when choosing a television.</p></article>
+      <article class="insight-card"><span class="card-number">03 / DAILY HABITS</span><h2>Switch it off</h2><p>Turning off a television when it is not being used helps avoid unnecessary electricity use.</p></article>
+    </section>
+    <section class="lab-section" id="visualisation">
+      <div class="lab-heading"><div><span class="eyebrow">LIVE D3.JS EXERCISE</span><h2>See D3 change the page</h2></div><p>The heading style, new paragraph and green SVG rectangle below are created or changed by <code>js/main.js</code>.</p></div>
+      <div class="lab-layout">
+        <div class="lab-panel">
+          <span class="panel-kicker">STEP 2 · SELECT + STYLE</span>
+          <h3 id="d3-heading">D3 is ready to style this heading</h3>
+          <div class="container" id="d3-message">
+            <p>This paragraph is written directly in the HTML file.</p>
+            <!-- Step 3: D3 appends another p element here -->
+          </div>
+        </div>
+        <div class="lab-panel svg-panel">
+          <span class="panel-kicker">STEP 4 · APPEND SVG SHAPE</span>
+          <h3>SVG rectangle</h3>
+          <p class="panel-note">The green rectangle is appended by D3—not hardcoded in this SVG.</p>
+          <svg id="energy-svg" width="360" height="180" viewBox="0 0 360 180" role="img" aria-label="A green rectangle drawn dynamically using D3"></svg>
+          <div class="legend"><span class="legend-swatch"></span><span>D3-generated rectangle: x=50, y=50, width=100, height=30</span></div>
+        </div>
+      </div>
+      <p class="developer-note">Tip: Press <kbd>F12</kbd>, select <strong>Elements</strong>, and inspect <code>#d3-message</code> and <code>#energy-svg</code> to see the DOM nodes D3 added.</p>
+    </section>
+  </main>
+  <footer><span>WattWise · Learning D3.js</span><span>Built for COS30045 — Week 4</span></footer>
+</body>
+</html>

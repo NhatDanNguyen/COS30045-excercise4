@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 4.1 - SVG House and Garden</title>
+  <style>
+    body {
+      margin: 0;
+      background: #eef4f8;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    svg {
+      width: min(1200px, 96vw);
+      height: auto;
+      border: 2px solid #263238;
+      background: white;
+    }
+
+    .window {
+      fill: #9ed8f5;
+      stroke: #263238;
+      stroke-width: 4;
+    }
+
+    .flower-stem {
+      stroke: #2f6b35;
+      stroke-width: 3;
+    }
+
+    .flower {
+      fill: #f46b8a;
+    }
+
+    .leaf {
+      fill: #4e984d;
+    }
+  </style>
+</head>
+
+<body>
+
+<svg viewBox="0 0 1200 750" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- SKY -->
+  <rect x="0" y="0" width="1200" height="750" fill="#bfe7ff"/>
+
+  <!-- SUN: circle -->
+  <circle cx="1050" cy="100" r="55" fill="#ffd95a"/>
+
+  <!-- CLOUDS: ellipses -->
+  <g fill="#ffffff" opacity="0.9">
+    <ellipse cx="190" cy="110" rx="70" ry="32"/>
+    <ellipse cx="250" cy="100" rx="60" ry="40"/>
+    <ellipse cx="300" cy="115" rx="75" ry="30"/>
+
+    <ellipse cx="820" cy="145" rx="65" ry="30"/>
+    <ellipse cx="875" cy="135" rx="55" ry="38"/>
+    <ellipse cx="930" cy="148" rx="70" ry="28"/>
+  </g>
+
+  <!-- DISTANT HILLS: polygons -->
+  <polygon
+    points="0,390 160,250 300,370 460,220 620,370 800,245 980,375 1120,260 1200,340 1200,520 0,520"
+    fill="#86ad8a"/>
+
+  <polygon
+    points="0,445 210,330 360,430 540,300 720,425 900,315 1080,430 1200,350 1200,560 0,560"
+    fill="#6f966f"/>
+
+  <!-- MAIN HILL: path -->
+  <path
+    d="M0 500
+       Q180 400 380 455
+       Q560 500 720 430
+       Q910 360 1200 505
+       L1200 750
+       L0 750 Z"
+    fill="#72a84e"/>
+
+  <!-- LARGE HOUSE BODY: rectangles -->
+  <rect x="330" y="270" width="540" height="280" rx="8"
+        fill="#f4e4c8" stroke="#4b3a2d" stroke-width="6"/>
+
+  <!-- LEFT WING -->
+  <rect x="275" y="335" width="125" height="215" rx="6"
+        fill="#ead3b0" stroke="#4b3a2d" stroke-width="6"/>
+
+  <!-- RIGHT WING -->
+  <rect x="800" y="335" width="125" height="215" rx="6"
+        fill="#ead3b0" stroke="#4b3a2d" stroke-width="6"/>
+
+  <!-- MAIN ROOF: polygon -->
+  <polygon
+    points="285,275 600,75 915,275"
+    fill="#4a4f59" stroke="#292d33" stroke-width="7"/>
+
+  <!-- LEFT ROOF SECTION -->
+  <polygon
+    points="255,340 340,245 425,340"
+    fill="#4a4f59" stroke="#292d33" stroke-width="6"/>
+
+  <!-- RIGHT ROOF SECTION -->
+  <polygon
+    points="775,340 860,245 945,340"
+    fill="#4a4f59" stroke="#292d33" stroke-width="6"/>
+
+  <!-- CHIMNEY: rectangles -->
+  <rect x="735" y="135" width="55" height="125"
+        fill="#9b5944" stroke="#4b3a2d" stroke-width="5"/>
+  <rect x="727" y="128" width="71" height="16"
+        fill="#713d30" stroke="#4b3a2d" stroke-width="4"/>
+
+  <!-- FRONT PORCH -->
+  <rect x="490" y="400" width="220" height="150"
+        fill="#e8d4b2" stroke="#4b3a2d" stroke-width="5"/>
+
+  <!-- Porch roof -->
+  <polygon
+    points="465,405 600,325 735,405"
+    fill="#5a606b" stroke="#292d33" stroke-width="6"/>
+
+  <!-- Porch columns: rect -->
+  <rect x="505" y="405" width="25" height="145" fill="#fff4df" stroke="#4b3a2d" stroke-width="4"/>
+  <rect x="670" y="405" width="25" height="145" fill="#fff4df" stroke="#4b3a2d" stroke-width="4"/>
+
+  <!-- DOOR -->
+  <rect x="567" y="425" width="66" height="125" rx="4"
+        fill="#754831" stroke="#3f2b20" stroke-width="5"/>
+
+  <!-- Door knob: circle -->
+  <circle cx="622" cy="490" r="6" fill="#e7c35f"/>
+
+  <!-- FRONT STEPS: centered under the door so the pathway connects more naturally -->
+  <g>
+    <rect x="554" y="548" width="92" height="10" rx="2" fill="#d9c7a8" stroke="#7e6a4d" stroke-width="2.5"/>
+    <rect x="546" y="558" width="108" height="11" rx="2" fill="#d2bea0" stroke="#7e6a4d" stroke-width="2.5"/>
+    <rect x="536" y="569" width="128" height="12" rx="2" fill="#cab596" stroke="#7e6a4d" stroke-width="2.5"/>
+  </g>
+
+  <!-- WINDOW GROUP: both windows styled identically -->
+  <g class="window-group" fill="#9ed8f5" stroke="#263238" stroke-width="4">
+
+    <!-- Window 1 -->
+    <g transform="translate(435,295)">
+      <rect x="0" y="0" width="95" height="65" rx="4"/>
+      <line x1="47.5" y1="0" x2="47.5" y2="65" stroke="#263238"/>
+      <line x1="0" y1="32.5" x2="95" y2="32.5" stroke="#263238"/>
+    </g>
+
+    <!-- Window 2 -->
+    <g transform="translate(670,295)">
+      <rect x="0" y="0" width="95" height="65" rx="4"/>
+      <line x1="47.5" y1="0" x2="47.5" y2="65" stroke="#263238"/>
+      <line x1="0" y1="32.5" x2="95" y2="32.5" stroke="#263238"/>
+    </g>
+  </g>
+
+  <!-- Small attic window: circle + lines -->
+  <circle cx="600" cy="210" r="38" fill="#9ed8f5" stroke="#263238" stroke-width="5"/>
+  <line x1="600" y1="172" x2="600" y2="248" stroke="#263238" stroke-width="4"/>
+  <line x1="562" y1="210" x2="638" y2="210" stroke="#263238" stroke-width="4"/>
+
+  <!-- WINDING WALKWAY: two gently sweeping edges widen dramatically towards the viewer -->
+  <defs>
+    <clipPath id="walkway-clip">
+      <path d="M544 581 C539 605 507 618 518 651 C532 693 618 690 610 750 L858 750 C844 678 644 676 658 634 C671 605 662 603 656 581 Z"/>
+    </clipPath>
+  </defs>
+  <!-- Dark shadow offset makes the pathway sit into the grass -->
+  <path d="M541 585 C536 609 504 622 515 655 C529 697 615 694 607 750 L864 750 C848 676 647 673 662 632 C675 603 666 601 659 585 Z"
+        fill="#486738" opacity="0.35"/>
+  <!-- Stone-and-mortar bed. SVG clipPath keeps all stones inside the winding edges. -->
+  <path d="M544 581 C539 605 507 618 518 651 C532 693 618 690 610 750 L858 750 C844 678 644 676 658 634 C671 605 662 603 656 581 Z"
+        fill="#aa987a" stroke="#806d50" stroke-width="4" stroke-linejoin="round"/>
+  <g clip-path="url(#walkway-clip)" stroke="#98876d" stroke-width="2.5" stroke-linejoin="round">
+    <!-- Irregular stones grow larger as the path approaches the viewer -->
+    <path d="M548 584 L575 582 L586 597 L571 609 L546 603 Z" fill="#e2d3b9"/>
+    <path d="M579 583 L608 582 L621 599 L603 613 L579 605 Z" fill="#c8b79b"/>
+    <path d="M610 584 L642 585 L654 603 L636 617 L610 607 Z" fill="#d9c7aa"/>
+    <path d="M531 607 Q554 597 582 607 L576 625 L542 631 L525 620 Z" fill="#d3c2a6"/>
+    <path d="M586 607 L617 609 L630 630 L606 641 L579 624 Z" fill="#e8dbc4"/>
+    <path d="M512 604 L554 601 L565 622 L544 638 L510 629 Z" fill="#e5d7bf"/>
+    <path d="M558 603 L594 596 L608 619 L583 639 L561 624 Z" fill="#c9b596"/>
+    <path d="M612 611 L658 603 L666 630 L631 646 L603 630 Z" fill="#dfceb0"/>
+    <path d="M499 635 L535 635 L550 657 L526 676 L497 666 Z" fill="#c7b395"/>
+    <path d="M542 641 L582 634 L605 658 L584 682 L545 670 Z" fill="#eee2cc"/>
+    <path d="M589 640 L628 643 L647 664 L612 689 L586 679 Z" fill="#d8c5a5"/>
+    <path d="M637 650 L684 654 L699 681 L662 701 L624 687 Z" fill="#ebdec7"/>
+    <path d="M491 677 L529 676 L565 693 L551 719 L504 708 Z" fill="#e2d0b3"/>
+    <path d="M534 680 L587 684 L617 704 L590 731 L551 720 Z" fill="#cbb899"/>
+    <path d="M600 690 L655 697 L681 726 L635 746 L593 728 Z" fill="#eee2cd"/>
+    <path d="M663 699 L719 696 L748 727 L707 750 L674 732 Z" fill="#d6c3a4"/>
+    <path d="M726 695 L787 708 L809 747 L751 754 L715 730 Z" fill="#e6d8bd"/>
+    <path d="M532 721 L590 731 L606 762 L542 765 L519 744 Z" fill="#eadcc3"/>
+    <path d="M611 733 L674 737 L692 765 L614 766 Z" fill="#cbb797"/>
+    <path d="M699 738 L752 730 L781 765 L705 766 Z" fill="#dfceb0"/>
+    <path d="M786 741 L853 723 L874 764 L797 766 Z" fill="#c9b394"/>
+  </g>
+  <!-- Clean upper edge reinforces the taper and S-curve -->
+  <path d="M544 581 C539 605 507 618 518 651 C532 693 618 690 610 750 M656 581 C662 603 671 605 658 634 C644 676 844 678 858 750"
+        fill="none" stroke="#7c6c50" stroke-width="4" stroke-linecap="round"/>
+  <!-- Delicate grasses at the edges -->
+  <g fill="none" stroke="#417d36" stroke-width="2.5" stroke-linecap="round">
+    <path d="M516 635 l-9 -10 m9 10 l5 -14 M527 677 l-12 -9 m12 9 l0 -13 M600 742 l-9 -15 m9 15 l5 -13 M674 639 l10 -12 m-10 12 l-2 -11 M774 700 l8 -12 m-8 12 l-3 -12"/>
+  </g>
+
+  <!-- GARDEN BUSHES: circles -->
+  <g fill="#397641">
+    <circle cx="230" cy="550" r="48"/>
+    <circle cx="280" cy="535" r="42"/>
+    <circle cx="330" cy="550" r="50"/>
+
+    <circle cx="880" cy="545" r="48"/>
+    <circle cx="930" cy="530" r="42"/>
+    <circle cx="980" cy="550" r="50"/>
+  </g>
+
+  <!-- FLOWERS: lines + circles -->
+  <g>
+    <line class="flower-stem" x1="190" y1="610" x2="190" y2="570"/>
+    <circle class="flower" cx="190" cy="562" r="11"/>
+    <circle class="flower" cx="178" cy="568" r="9"/>
+    <circle class="flower" cx="202" cy="568" r="9"/>
+
+    <line class="flower-stem" x1="250" y1="625" x2="250" y2="582"/>
+    <circle class="flower" cx="250" cy="574" r="11"/>
+    <circle class="flower" cx="238" cy="580" r="9"/>
+    <circle class="flower" cx="262" cy="580" r="9"/>
+
+    <line class="flower-stem" x1="920" y1="620" x2="920" y2="578"/>
+    <circle class="flower" cx="920" cy="570" r="11"/>
+    <circle class="flower" cx="908" cy="576" r="9"/>
+    <circle class="flower" cx="932" cy="576" r="9"/>
+
+    <line class="flower-stem" x1="985" y1="610" x2="985" y2="568"/>
+    <circle class="flower" cx="985" cy="560" r="11"/>
+    <circle class="flower" cx="973" cy="566" r="9"/>
+    <circle class="flower" cx="997" cy="566" r="9"/>
+  </g>
+
+  <!-- LARGE TREE: trunk rectangle + circles for crown -->
+  <rect x="105" y="350" width="45" height="190" rx="8"
+        fill="#6b4530" stroke="#4b3223" stroke-width="4"/>
+
+  <g fill="#3f7f45">
+    <circle cx="125" cy="300" r="70"/>
+    <circle cx="75" cy="335" r="55"/>
+    <circle cx="175" cy="335" r="60"/>
+    <circle cx="100" cy="380" r="60"/>
+    <circle cx="170" cy="385" r="55"/>
+  </g>
+
+  <!-- Small garden lamp: line + circle -->
+  <g stroke="#30343b" stroke-width="5">
+    <line x1="1030" y1="620" x2="1030" y2="560"/>
+    <circle cx="1030" cy="550" r="10" fill="#ffd76a"/>
+  </g>
+
+  <!-- PICKET FENCE: lines -->
+  <g stroke="#fff4df" stroke-width="8">
+    <line x1="0" y1="640" x2="240" y2="620"/>
+    <line x1="0" y1="680" x2="240" y2="660"/>
+    <line x1="110" y1="625" x2="110" y2="675"/>
+    <line x1="160" y1="622" x2="160" y2="670"/>
+    <line x1="210" y1="620" x2="210" y2="665"/>
+
+    <line x1="970" y1="620" x2="1200" y2="645"/>
+    <line x1="970" y1="660" x2="1200" y2="685"/>
+    <line x1="990" y1="622" x2="990" y2="668"/>
+    <line x1="1040" y1="627" x2="1040" y2="674"/>
+    <line x1="1090" y1="632" x2="1090" y2="678"/>
+  </g>
+
+  <!-- Decorative garden labels/text -->
+  <text x="600" y="45"
+        text-anchor="middle"
+        font-size="22"
+        font-weight="bold"
+        fill="#263238">
+    My Hilltop Garden
+  </text>
+
+</svg>
+
+</body>
+</html>

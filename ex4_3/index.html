@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Exercise 4.3: set up a responsive SVG canvas and draw a test rectangle with D3.js.">
+  <title>TV Energy Guide | Exercise 4.3</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Step 1: keep D3 before main.js. Both deferred scripts run after HTML parsing, in order. -->
+  <script src="https://d3js.org/d3.v7.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home"><span class="brand-mark">⚡</span> WattWise <span class="brand-small">/ D3 LAB</span></a>
+    <span class="header-tag">COS30045 · Exercise 4.3</span>
+  </header>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">ENERGY SMARTER, NOT HARDER</span>
+        <h1>Small decisions.<br><span>Lower energy use.</span></h1>
+        <p class="hero-description">Choosing an energy-efficient television can make a difference to your electricity consumption. This exercise sets up a responsive SVG canvas with D3.js, ready for a future energy consumption chart.</p>
+        <a class="hero-link" href="#visualisation">See the D3 example <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-graphic" aria-hidden="true">
+        <div class="glow"></div>
+        <div class="tv">
+          <div class="tv-screen">
+            <div class="hill hill-back"></div>
+            <div class="hill hill-front"></div>
+            <div class="screen-sun"></div>
+          </div>
+        </div>
+        <div class="tv-stand"></div>
+        <div class="energy-tag"><span class="energy-dot"></span> ENERGY AWARE</div>
+      </div>
+    </section>
+    <section class="insights" aria-label="Energy tips">
+      <article class="insight-card">
+        <span class="card-number">01 / SCREEN SIZE</span>
+        <h2>Size matters</h2>
+        <p>Larger televisions often require more electricity, although technology and efficiency also matter.</p>
+      </article>
+      <article class="insight-card">
+        <span class="card-number">02 / ENERGY LABEL</span>
+        <h2>Check the rating</h2>
+        <p>Compare the energy label and estimated annual energy use when choosing a television.</p>
+      </article>
+      <article class="insight-card">
+        <span class="card-number">03 / DAILY HABITS</span>
+        <h2>Switch it off</h2>
+        <p>Turning off a television when it is not being used helps avoid unnecessary electricity use.</p>
+      </article>
+    </section>
+    <section class="lab-section" id="visualisation" aria-labelledby="lab-title">
+      <div class="lab-heading">
+        <div>
+          <span class="panel-kicker">EXERCISE 4.3 / D3 SET UP</span>
+          <h2 id="lab-title">A canvas for our data</h2>
+        </div>
+        <p>The blue rectangle tests the SVG setup. Its dimensions are hard coded; later exercises will use CSV data to draw the bars.</p>
+      </div>
+      <!-- Step 2: D3 selects this empty container and appends the SVG and rectangle in main.js. -->
+      <div class="responsive-svg-container"></div>
+    </section>
+  </main>
+  <footer><span>WattWise · Learning D3.js</span><span>Built for COS30045 — Week 4</span></footer>
+</body>
+</html>

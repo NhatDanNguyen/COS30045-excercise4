@@ -28,4 +28,4 @@ OpenAI Codex was used to review and refine the existing Exercise 4.5 work agains
 - Adding a visible CSV loading error message.
 - Drafting this README and assisting with verification and Git operations.
 
-The CSV dataset was not generated or modified by Codex during this refinement. This declaration describes assistance in this session; it does not establish the provenance of earlier work. The student remains responsible for reviewing the submission, understanding the code, and following the unit's AI-use and assessment requirements.
+The CSV dataset was not generated or modified by Codex during this refinement. This declaration describes assistance in this session; it does not establish the provenance of earlier work. The author remains responsible for reviewing the submission, understanding the code, and following the unit's AI-use and assessment requirements.

@@ -8,17 +8,19 @@
   <link rel="stylesheet" href="assets/site.css">
   <script defer src="assets/d3.v7.min.js"></script><script defer src="js/main.js"></script>
 </head>
-<body>
+<body class="week-4 standalone">
   <a class="skip-link" href="#main">Skip to charts</a>
   <header class="site-header">
-    <h1 class="site-title"><a href="#main">Week 4 - Data Visualisation</a></h1>
+    <h1 class="site-title"><a href="#main"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span><span class="demo-name">Week 4</span><span class="demo-subject">Data Visualisation</span></span></a></h1>
     
   </header>
   <main id="main">
-    <section class="exercise" aria-labelledby="brands-heading">
+    <section class="exercise brand-section" aria-labelledby="brands-heading">
+      <div class="exercise-intro">
       <p class="kicker">Exercise 4.7 · Labels and scales</p>
       <h2 id="brands-heading">TV brand counts</h2>
       <p class="subtitle">25 brands, ordered by number of records.</p>
+      </div>
       <div class="responsive-svg-container chart brand-chart" tabindex="0" aria-label="TV brand chart, horizontally scrollable on small screens"></div>
       <p id="chart-error" class="error" role="alert" hidden></p>
       <p class="source note-mobile">Counts from the supplied dataset. <a class="data-link" href="data/tvBrandCount.csv" download>CSV ↓</a></p>
